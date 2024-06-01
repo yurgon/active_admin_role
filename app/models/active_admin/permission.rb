@@ -25,6 +25,10 @@ module ActiveAdmin
       end
     end
 
+     def self.ransackable_associations(auth_object = nil)
+       ["managed_resource"]
+     end
+
     class << self
       def update_all_from_managed_resources
         ::ActiveAdmin::ManagedResource.all.find_each do |managed_resource|
