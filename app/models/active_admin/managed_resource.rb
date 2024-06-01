@@ -18,6 +18,10 @@ module ActiveAdmin
       class_name == "ActiveAdmin::Page"
     end
 
+    def self.ransackable_attributes(auth_object = nil)
+      ["action", "class_name", "created_at", "id", "id_value", "name", "updated_at"]
+    end
+
     class << self
       def reload
         ActiveAdmin::PermissionReloader.reload
