@@ -18,8 +18,12 @@ module ActiveAdmin
       class_name == "ActiveAdmin::Page"
     end
 
-    def self.ransackable_attributes(auth_object = nil)
-      ["action", "class_name", "created_at", "id", "id_value", "name", "updated_at"]
+    def self.ransackable_attributes(_auth_object = nil)
+      authorizable_ransackable_attributes
+    end
+  
+    def self.ransackable_associations(_auth_object = nil)
+      authorizable_ransackable_associations
     end
 
     class << self
