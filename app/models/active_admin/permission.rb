@@ -25,12 +25,12 @@ module ActiveAdmin
       end
     end
 
-    def self.ransackable_associations(auth_object = nil)
-      ["managed_resource"]
+    def self.ransackable_attributes(_auth_object = nil)
+      authorizable_ransackable_attributes
     end
-
-    def self.ransackable_attributes(auth_object = nil)
-      ["created_at", "id", "id_value", "managed_resource_id", "role", "state", "updated_at"]
+  
+    def self.ransackable_associations(_auth_object = nil)
+      authorizable_ransackable_associations
     end
 
     class << self
